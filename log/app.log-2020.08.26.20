@@ -1,0 +1,150 @@
+20:24:43.188  INFO [pocket,,] [${sys:PID}] [main][org.springframework.test.context.support.AbstractTestContextBootstrapper:308]: Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.hope.EurekaApplicationTests], using SpringBootContextLoader
+20:24:43.199  INFO [pocket,,] [${sys:PID}] [main][org.springframework.test.context.support.AbstractContextLoader:264]: Could not detect default resource locations for test class [com.hope.EurekaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:24:43.200  INFO [pocket,,] [${sys:PID}] [main][org.springframework.test.context.support.AnnotationConfigContextLoaderUtils:83]: Could not detect default configuration classes for test class [com.hope.EurekaApplicationTests]: EurekaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:24:43.328  INFO [pocket,,] [${sys:PID}] [main][org.springframework.boot.test.context.SpringBootTestContextBootstrapper:237]: Found @SpringBootConfiguration com.hope.EurekaApplication for test class com.hope.EurekaApplicationTests
+20:24:43.431  INFO [pocket,,] [${sys:PID}] [main][org.springframework.test.context.support.AbstractTestContextBootstrapper:248]: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+20:24:43.443  INFO [pocket,,] [${sys:PID}] [main][org.springframework.test.context.support.AbstractTestContextBootstrapper:177]: Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@16c3ca31, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2d195ee4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2d6aca33, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@21ab988f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@29314cc9, org.springframework.test.context.event.EventPublishingTestExecutionListener@4e38d975, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@35f8a9d3, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@48ea2003, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6b1e7ad3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@63e5e5b4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@13a37e2a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@a50ae65]
+20:24:44.051  INFO [pocket,,] [31020] [background-preinit][org.hibernate.validator.internal.util.Version:21]: HV000001: Hibernate Validator 6.1.5.Final
+20:24:44.117  INFO [pocket,,] [31020] [main][org.springframework.boot.StartupInfoLogger:55]: Starting EurekaApplicationTests using Java 11 on DESKTOP-O164E7I with PID 31020 (started by black in D:\springcloud workplace\eureka)
+20:24:44.122  INFO [pocket,,] [31020] [main][org.springframework.boot.SpringApplication:652]: No active profile set, falling back to default profiles: default
+20:24:45.613  INFO [pocket,,] [31020] [main][org.springframework.cloud.context.scope.GenericScope:295]: BeanFactory id=cd68c9c7-8c00-357c-8423-524ba6240c1c
+20:24:46.669  INFO [pocket,,] [31020] [main][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:181]: Initializing ExecutorService 'applicationTaskExecutor'
+20:24:48.444  INFO [pocket,,] [31020] [main][org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration:79]: Eureka HTTP Client uses Jersey
+20:24:48.677  WARN [pocket,,] [31020] [main][org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger:81]: Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+20:24:48.700  INFO [pocket,,] [31020] [main][org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:58]: Exposing 2 endpoint(s) beneath base path '/actuator'
+20:24:48.777  INFO [pocket,,] [31020] [main][org.springframework.cloud.netflix.eureka.InstanceInfoFactory:72]: Setting initial instance status as: STARTING
+20:24:48.843  INFO [pocket,,] [31020] [main][com.netflix.discovery.DiscoveryClient:371]: Initializing Eureka in region us-east-1
+20:24:48.843  INFO [pocket,,] [31020] [main][com.netflix.discovery.DiscoveryClient:374]: Client configured to neither register nor query for data.
+20:24:48.860  INFO [pocket,,] [31020] [main][com.netflix.discovery.DiscoveryClient:389]: Discovery Client initialized at timestamp 1598444688857 with initial instances count: 0
+20:24:48.872  INFO [pocket,,] [31020] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:41]: Registering application EUREKA with eureka with status UP
+20:24:48.895  INFO [pocket,,] [31020] [main][org.springframework.boot.StartupInfoLogger:61]: Started EurekaApplicationTests in 5.404 seconds (JVM running for 7.034)
+20:24:49.328  INFO [pocket,,] [31020] [SpringContextShutdownHook][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:65]: Unregistering application EUREKA with eureka with status DOWN
+20:24:49.333  INFO [pocket,,] [31020] [SpringContextShutdownHook][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:218]: Shutting down ExecutorService 'applicationTaskExecutor'
+20:24:49.337  INFO [pocket,,] [31020] [SpringContextShutdownHook][com.netflix.discovery.DiscoveryClient:932]: Shutting down DiscoveryClient ...
+20:24:49.350  INFO [pocket,,] [31020] [SpringContextShutdownHook][com.netflix.discovery.DiscoveryClient:957]: Completed shut down of DiscoveryClient
+20:35:04.650  INFO [pocket,,] [2724] [background-preinit][org.hibernate.validator.internal.util.Version:21]: HV000001: Hibernate Validator 6.1.5.Final
+20:35:04.693  INFO [pocket,,] [2724] [main][org.springframework.boot.StartupInfoLogger:55]: Starting EurekaApplication using Java 11 on DESKTOP-O164E7I with PID 2724 (D:\springcloud workplace\eureka\target\classes started by black in D:\springcloud workplace\eureka)
+20:35:04.697  INFO [pocket,,] [2724] [main][org.springframework.boot.SpringApplication:652]: No active profile set, falling back to default profiles: default
+20:35:05.628  INFO [pocket,,] [2724] [main][org.springframework.cloud.context.scope.GenericScope:295]: BeanFactory id=59d6c59e-ec4b-3038-9663-da3fc07fb0f8
+20:35:05.820  WARN [pocket,,] [2724] [main][io.undertow.websockets.jsr.Bootstrap:68]: UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+20:35:05.836  INFO [pocket,,] [2724] [main][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring embedded WebApplicationContext
+20:35:05.837  INFO [pocket,,] [2724] [main][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:289]: Root WebApplicationContext: initialization completed in 1102 ms
+20:35:06.114  INFO [pocket,,] [2724] [main][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:181]: Initializing ExecutorService 'applicationTaskExecutor'
+20:35:28.077  INFO [pocket,,] [25100] [background-preinit][org.hibernate.validator.internal.util.Version:21]: HV000001: Hibernate Validator 6.1.5.Final
+20:35:28.116  INFO [pocket,,] [25100] [main][org.springframework.boot.StartupInfoLogger:55]: Starting EurekaApplication using Java 11 on DESKTOP-O164E7I with PID 25100 (D:\springcloud workplace\eureka\target\classes started by black in D:\springcloud workplace\eureka)
+20:35:28.119  INFO [pocket,,] [25100] [main][org.springframework.boot.SpringApplication:652]: No active profile set, falling back to default profiles: default
+20:35:28.954  INFO [pocket,,] [25100] [main][org.springframework.cloud.context.scope.GenericScope:295]: BeanFactory id=59d6c59e-ec4b-3038-9663-da3fc07fb0f8
+20:35:29.114  WARN [pocket,,] [25100] [main][io.undertow.websockets.jsr.Bootstrap:68]: UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+20:35:29.130  INFO [pocket,,] [25100] [main][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring embedded WebApplicationContext
+20:35:29.130  INFO [pocket,,] [25100] [main][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:289]: Root WebApplicationContext: initialization completed in 971 ms
+20:35:29.392  INFO [pocket,,] [25100] [main][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:181]: Initializing ExecutorService 'applicationTaskExecutor'
+20:35:30.445  INFO [pocket,,] [25100] [main][org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration:79]: Eureka HTTP Client uses Jersey
+20:35:30.511  WARN [pocket,,] [25100] [main][org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger:81]: Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+20:35:30.517  INFO [pocket,,] [25100] [main][org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:58]: Exposing 2 endpoint(s) beneath base path '/actuator'
+20:35:30.600  INFO [pocket,,] [25100] [main][org.springframework.cloud.netflix.eureka.InstanceInfoFactory:72]: Setting initial instance status as: STARTING
+20:35:30.626  INFO [pocket,,] [25100] [main][com.netflix.discovery.DiscoveryClient:371]: Initializing Eureka in region us-east-1
+20:35:30.626  INFO [pocket,,] [25100] [main][com.netflix.discovery.DiscoveryClient:374]: Client configured to neither register nor query for data.
+20:35:30.631  INFO [pocket,,] [25100] [main][com.netflix.discovery.DiscoveryClient:389]: Discovery Client initialized at timestamp 1598445330631 with initial instances count: 0
+20:35:30.636  INFO [pocket,,] [25100] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:41]: Registering application EUREKA with eureka with status UP
+20:35:30.642  INFO [pocket,,] [25100] [main][io.undertow.Undertow:117]: starting server: Undertow - 2.1.3.Final
+20:35:30.648  INFO [pocket,,] [25100] [main][org.xnio.Xnio:95]: XNIO version 3.8.0.Final
+20:35:30.654  INFO [pocket,,] [25100] [main][org.xnio.nio.NioXnio:59]: XNIO NIO Implementation Version 3.8.0.Final
+20:35:30.693  INFO [pocket,,] [25100] [main][org.jboss.threads.Version:52]: JBoss Threads version 3.1.0.Final
+20:35:30.755  INFO [pocket,,] [25100] [main][org.springframework.boot.web.embedded.undertow.UndertowWebServer:133]: Undertow started on port(s) 8761 (http)
+20:35:30.756  INFO [pocket,,] [25100] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration:145]: Updating port to 8761
+20:35:30.863  INFO [pocket,,] [25100] [RMI TCP Connection(2)-127.0.0.1][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:35:30.863  INFO [pocket,,] [25100] [RMI TCP Connection(2)-127.0.0.1][org.springframework.web.servlet.FrameworkServlet:525]: Initializing Servlet 'dispatcherServlet'
+20:35:30.865  INFO [pocket,,] [25100] [RMI TCP Connection(2)-127.0.0.1][org.springframework.web.servlet.FrameworkServlet:547]: Completed initialization in 2 ms
+20:35:31.131  INFO [pocket,,] [25100] [main][org.springframework.boot.StartupInfoLogger:61]: Started EurekaApplication in 3.7 seconds (JVM running for 4.89)
+20:39:30.710  INFO [pocket,,] [13468] [background-preinit][org.hibernate.validator.internal.util.Version:21]: HV000001: Hibernate Validator 6.1.5.Final
+20:39:30.778  INFO [pocket,,] [13468] [main][org.springframework.boot.StartupInfoLogger:55]: Starting EurekaApplication using Java 11 on DESKTOP-O164E7I with PID 13468 (D:\springcloud workplace\eureka\target\classes started by black in D:\springcloud workplace\eureka)
+20:39:30.782  INFO [pocket,,] [13468] [main][org.springframework.boot.SpringApplication:652]: No active profile set, falling back to default profiles: default
+20:39:31.565  INFO [pocket,,] [13468] [main][org.springframework.cloud.context.scope.GenericScope:295]: BeanFactory id=59d6c59e-ec4b-3038-9663-da3fc07fb0f8
+20:39:31.724  WARN [pocket,,] [13468] [main][io.undertow.websockets.jsr.Bootstrap:68]: UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+20:39:31.745  INFO [pocket,,] [13468] [main][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring embedded WebApplicationContext
+20:39:31.745  INFO [pocket,,] [13468] [main][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:289]: Root WebApplicationContext: initialization completed in 919 ms
+20:39:32.001  INFO [pocket,,] [13468] [main][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:181]: Initializing ExecutorService 'applicationTaskExecutor'
+20:39:32.876  INFO [pocket,,] [13468] [main][org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration:79]: Eureka HTTP Client uses Jersey
+20:39:32.931  WARN [pocket,,] [13468] [main][org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger:81]: Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+20:39:32.938  INFO [pocket,,] [13468] [main][org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:58]: Exposing 2 endpoint(s) beneath base path '/actuator'
+20:39:33.027  INFO [pocket,,] [13468] [main][org.springframework.cloud.netflix.eureka.InstanceInfoFactory:72]: Setting initial instance status as: STARTING
+20:39:33.060  INFO [pocket,,] [13468] [main][com.netflix.discovery.DiscoveryClient:371]: Initializing Eureka in region us-east-1
+20:39:33.061  INFO [pocket,,] [13468] [main][com.netflix.discovery.DiscoveryClient:374]: Client configured to neither register nor query for data.
+20:39:33.068  INFO [pocket,,] [13468] [main][com.netflix.discovery.DiscoveryClient:389]: Discovery Client initialized at timestamp 1598445573065 with initial instances count: 0
+20:39:33.074  INFO [pocket,,] [13468] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:41]: Registering application EUREKA with eureka with status UP
+20:39:33.082  INFO [pocket,,] [13468] [main][io.undertow.Undertow:117]: starting server: Undertow - 2.1.3.Final
+20:39:33.091  INFO [pocket,,] [13468] [main][org.xnio.Xnio:95]: XNIO version 3.8.0.Final
+20:39:33.097  INFO [pocket,,] [13468] [main][org.xnio.nio.NioXnio:59]: XNIO NIO Implementation Version 3.8.0.Final
+20:39:33.127  INFO [pocket,,] [13468] [main][org.jboss.threads.Version:52]: JBoss Threads version 3.1.0.Final
+20:39:33.156  INFO [pocket,,] [13468] [main][org.springframework.boot.web.embedded.undertow.UndertowWebServer:133]: Undertow started on port(s) 8761 (http)
+20:39:33.157  INFO [pocket,,] [13468] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration:145]: Updating port to 8761
+20:39:33.408  INFO [pocket,,] [13468] [main][org.springframework.boot.StartupInfoLogger:61]: Started EurekaApplication in 3.271 seconds (JVM running for 4.334)
+20:39:33.715  INFO [pocket,,] [13468] [RMI TCP Connection(2)-127.0.0.1][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:39:33.715  INFO [pocket,,] [13468] [RMI TCP Connection(2)-127.0.0.1][org.springframework.web.servlet.FrameworkServlet:525]: Initializing Servlet 'dispatcherServlet'
+20:39:33.716  INFO [pocket,,] [13468] [RMI TCP Connection(2)-127.0.0.1][org.springframework.web.servlet.FrameworkServlet:547]: Completed initialization in 1 ms
+20:40:12.878  INFO [pocket,,] [13468] [RMI TCP Connection(5)-127.0.0.1][org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159]: Application shutdown requested.
+20:40:12.879  INFO [pocket,,] [13468] [RMI TCP Connection(5)-127.0.0.1][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:65]: Unregistering application EUREKA with eureka with status DOWN
+20:40:12.882  INFO [pocket,,] [13468] [RMI TCP Connection(5)-127.0.0.1][io.undertow.Undertow:252]: stopping server: Undertow - 2.1.3.Final
+20:40:12.888  INFO [pocket,,] [13468] [RMI TCP Connection(5)-127.0.0.1][io.undertow.servlet.spec.ServletContextImpl:364]: Destroying Spring FrameworkServlet 'dispatcherServlet'
+20:40:12.891  INFO [pocket,,] [13468] [RMI TCP Connection(5)-127.0.0.1][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:218]: Shutting down ExecutorService 'applicationTaskExecutor'
+20:40:12.893  INFO [pocket,,] [13468] [RMI TCP Connection(5)-127.0.0.1][com.netflix.discovery.DiscoveryClient:932]: Shutting down DiscoveryClient ...
+20:40:12.898  INFO [pocket,,] [13468] [RMI TCP Connection(5)-127.0.0.1][com.netflix.discovery.DiscoveryClient:957]: Completed shut down of DiscoveryClient
+20:40:19.962  INFO [pocket,,] [29140] [background-preinit][org.hibernate.validator.internal.util.Version:21]: HV000001: Hibernate Validator 6.1.5.Final
+20:40:20.020  INFO [pocket,,] [29140] [main][org.springframework.boot.StartupInfoLogger:55]: Starting EurekaApplication using Java 11 on DESKTOP-O164E7I with PID 29140 (D:\springcloud workplace\eureka\target\classes started by black in D:\springcloud workplace\eureka)
+20:40:20.022  INFO [pocket,,] [29140] [main][org.springframework.boot.SpringApplication:652]: No active profile set, falling back to default profiles: default
+20:40:20.755  INFO [pocket,,] [29140] [main][org.springframework.cloud.context.scope.GenericScope:295]: BeanFactory id=59d6c59e-ec4b-3038-9663-da3fc07fb0f8
+20:40:20.916  WARN [pocket,,] [29140] [main][io.undertow.websockets.jsr.Bootstrap:68]: UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+20:40:20.931  INFO [pocket,,] [29140] [main][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring embedded WebApplicationContext
+20:40:20.931  INFO [pocket,,] [29140] [main][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:289]: Root WebApplicationContext: initialization completed in 876 ms
+20:40:21.163  INFO [pocket,,] [29140] [main][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:181]: Initializing ExecutorService 'applicationTaskExecutor'
+20:40:22.027  INFO [pocket,,] [29140] [main][org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration:79]: Eureka HTTP Client uses Jersey
+20:40:22.065  WARN [pocket,,] [29140] [main][org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger:81]: Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+20:40:22.069  INFO [pocket,,] [29140] [main][org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:58]: Exposing 2 endpoint(s) beneath base path '/actuator'
+20:40:22.123  INFO [pocket,,] [29140] [main][org.springframework.cloud.netflix.eureka.InstanceInfoFactory:72]: Setting initial instance status as: STARTING
+20:40:22.142  INFO [pocket,,] [29140] [main][com.netflix.discovery.DiscoveryClient:371]: Initializing Eureka in region us-east-1
+20:40:22.142  INFO [pocket,,] [29140] [main][com.netflix.discovery.DiscoveryClient:374]: Client configured to neither register nor query for data.
+20:40:22.145  INFO [pocket,,] [29140] [main][com.netflix.discovery.DiscoveryClient:389]: Discovery Client initialized at timestamp 1598445622145 with initial instances count: 0
+20:40:22.149  INFO [pocket,,] [29140] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:41]: Registering application EUREKA with eureka with status UP
+20:40:22.154  INFO [pocket,,] [29140] [main][io.undertow.Undertow:117]: starting server: Undertow - 2.1.3.Final
+20:40:22.158  INFO [pocket,,] [29140] [main][org.xnio.Xnio:95]: XNIO version 3.8.0.Final
+20:40:22.162  INFO [pocket,,] [29140] [main][org.xnio.nio.NioXnio:59]: XNIO NIO Implementation Version 3.8.0.Final
+20:40:22.187  INFO [pocket,,] [29140] [main][org.jboss.threads.Version:52]: JBoss Threads version 3.1.0.Final
+20:40:22.228  INFO [pocket,,] [29140] [main][org.springframework.boot.web.embedded.undertow.UndertowWebServer:133]: Undertow started on port(s) 8761 (http)
+20:40:22.229  INFO [pocket,,] [29140] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration:145]: Updating port to 8761
+20:40:22.503  INFO [pocket,,] [29140] [main][org.springframework.boot.StartupInfoLogger:61]: Started EurekaApplication in 3.077 seconds (JVM running for 4.137)
+20:40:22.508  INFO [pocket,,] [29140] [RMI TCP Connection(1)-127.0.0.1][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:40:22.508  INFO [pocket,,] [29140] [RMI TCP Connection(1)-127.0.0.1][org.springframework.web.servlet.FrameworkServlet:525]: Initializing Servlet 'dispatcherServlet'
+20:40:22.509  INFO [pocket,,] [29140] [RMI TCP Connection(1)-127.0.0.1][org.springframework.web.servlet.FrameworkServlet:547]: Completed initialization in 1 ms
+20:40:48.682  INFO [pocket,,] [29140] [RMI TCP Connection(4)-127.0.0.1][org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:159]: Application shutdown requested.
+20:40:48.683  INFO [pocket,,] [29140] [RMI TCP Connection(4)-127.0.0.1][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:65]: Unregistering application EUREKA with eureka with status DOWN
+20:40:48.686  INFO [pocket,,] [29140] [RMI TCP Connection(4)-127.0.0.1][io.undertow.Undertow:252]: stopping server: Undertow - 2.1.3.Final
+20:40:48.697  INFO [pocket,,] [29140] [RMI TCP Connection(4)-127.0.0.1][io.undertow.servlet.spec.ServletContextImpl:364]: Destroying Spring FrameworkServlet 'dispatcherServlet'
+20:40:48.701  INFO [pocket,,] [29140] [RMI TCP Connection(4)-127.0.0.1][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:218]: Shutting down ExecutorService 'applicationTaskExecutor'
+20:40:48.704  INFO [pocket,,] [29140] [RMI TCP Connection(4)-127.0.0.1][com.netflix.discovery.DiscoveryClient:932]: Shutting down DiscoveryClient ...
+20:40:48.710  INFO [pocket,,] [29140] [RMI TCP Connection(4)-127.0.0.1][com.netflix.discovery.DiscoveryClient:957]: Completed shut down of DiscoveryClient
+20:41:22.597  INFO [pocket,,] [31064] [background-preinit][org.hibernate.validator.internal.util.Version:21]: HV000001: Hibernate Validator 6.1.5.Final
+20:41:22.650  INFO [pocket,,] [31064] [main][org.springframework.boot.StartupInfoLogger:55]: Starting EurekaApplication using Java 11 on DESKTOP-O164E7I with PID 31064 (D:\springcloud workplace\eureka\target\classes started by black in D:\springcloud workplace\eureka)
+20:41:22.653  INFO [pocket,,] [31064] [main][org.springframework.boot.SpringApplication:652]: No active profile set, falling back to default profiles: default
+20:41:23.522  INFO [pocket,,] [31064] [main][org.springframework.cloud.context.scope.GenericScope:295]: BeanFactory id=59d6c59e-ec4b-3038-9663-da3fc07fb0f8
+20:41:23.678  WARN [pocket,,] [31064] [main][io.undertow.websockets.jsr.Bootstrap:68]: UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+20:41:23.693  INFO [pocket,,] [31064] [main][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring embedded WebApplicationContext
+20:41:23.693  INFO [pocket,,] [31064] [main][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:289]: Root WebApplicationContext: initialization completed in 1007 ms
+20:41:23.928  INFO [pocket,,] [31064] [main][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport:181]: Initializing ExecutorService 'applicationTaskExecutor'
+20:41:24.845  INFO [pocket,,] [31064] [main][org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration:79]: Eureka HTTP Client uses Jersey
+20:41:24.890  WARN [pocket,,] [31064] [main][org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger:81]: Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+20:41:24.895  INFO [pocket,,] [31064] [main][org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:58]: Exposing 2 endpoint(s) beneath base path '/actuator'
+20:41:24.950  INFO [pocket,,] [31064] [main][org.springframework.cloud.netflix.eureka.InstanceInfoFactory:72]: Setting initial instance status as: STARTING
+20:41:24.969  INFO [pocket,,] [31064] [main][com.netflix.discovery.DiscoveryClient:371]: Initializing Eureka in region us-east-1
+20:41:24.969  INFO [pocket,,] [31064] [main][com.netflix.discovery.DiscoveryClient:374]: Client configured to neither register nor query for data.
+20:41:24.973  INFO [pocket,,] [31064] [main][com.netflix.discovery.DiscoveryClient:389]: Discovery Client initialized at timestamp 1598445684972 with initial instances count: 0
+20:41:24.976  INFO [pocket,,] [31064] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry:41]: Registering application EUREKA with eureka with status UP
+20:41:24.982  INFO [pocket,,] [31064] [main][io.undertow.Undertow:117]: starting server: Undertow - 2.1.3.Final
+20:41:24.987  INFO [pocket,,] [31064] [main][org.xnio.Xnio:95]: XNIO version 3.8.0.Final
+20:41:24.991  INFO [pocket,,] [31064] [main][org.xnio.nio.NioXnio:59]: XNIO NIO Implementation Version 3.8.0.Final
+20:41:25.017  INFO [pocket,,] [31064] [main][org.jboss.threads.Version:52]: JBoss Threads version 3.1.0.Final
+20:41:25.048  INFO [pocket,,] [31064] [main][org.springframework.boot.web.embedded.undertow.UndertowWebServer:133]: Undertow started on port(s) 8061 (http)
+20:41:25.048  INFO [pocket,,] [31064] [main][org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration:145]: Updating port to 8061
+20:41:25.303  INFO [pocket,,] [31064] [RMI TCP Connection(2)-127.0.0.1][io.undertow.servlet.spec.ServletContextImpl:364]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:41:25.303  INFO [pocket,,] [31064] [RMI TCP Connection(2)-127.0.0.1][org.springframework.web.servlet.FrameworkServlet:525]: Initializing Servlet 'dispatcherServlet'
+20:41:25.306  INFO [pocket,,] [31064] [RMI TCP Connection(2)-127.0.0.1][org.springframework.web.servlet.FrameworkServlet:547]: Completed initialization in 1 ms
+20:41:25.457  INFO [pocket,,] [31064] [main][org.springframework.boot.StartupInfoLogger:61]: Started EurekaApplication in 3.407 seconds (JVM running for 4.401)

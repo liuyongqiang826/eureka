@@ -1,0 +1,890 @@
+12:00:02.244  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:00:05.247  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:00:08.251  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:00:11.252  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:00:14.255  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:00:16.557  WARN [pocket,,] [27436] [DiscoveryClient-0][com.netflix.discovery.TimedSupervisorTask:73]: task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[?:?]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:00:16.557 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://10.0.1.10:12123/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:196) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	... 30 more
+
+12:00:16.557  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+12:00:16.604 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://47.98.120.110:12123/eureka/}
+
+javax.ws.rs.WebApplicationException: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:110) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:200) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:805) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:791) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2218) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2076) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1453) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at org.springframework.cloud.netflix.eureka.server.CloudJacksonJson.decode(CloudJacksonJson.java:84) ~[spring-cloud-netflix-eureka-server-3.0.0-SNAPSHOT.jar!/:3.0.0-SNAPSHOT]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	... 26 more
+
+12:00:16.604  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+12:00:16.604 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.DiscoveryClient:1018]: DiscoveryClient_EUREKA/DESKTOP-O164E7I:eureka:12123 - was unable to refresh its cache! status = Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:00:17.258  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:00:20.261  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:00:23.267  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 5ms
+12:00:26.274  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 6ms
+12:00:29.280  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 6ms
+12:00:32.285  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:00:35.288  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:00:38.295  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 6ms
+12:00:41.298  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:00:44.299  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:00:47.300  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:00:50.300  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:00:52.296  INFO [pocket,,] [27436] [AsyncResolver-bootstrap-executor-0][com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver:43]: Resolving eureka endpoints via configuration
+12:00:53.300  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:00:56.300  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:00:59.301  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:01:02.301  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:01:05.301  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:01:08.301  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:01:11.302  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:01:11.558  WARN [pocket,,] [27436] [DiscoveryClient-0][com.netflix.discovery.TimedSupervisorTask:73]: task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[?:?]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:01:11.559 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://10.0.1.10:12123/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:196) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	... 30 more
+
+12:01:11.559  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+12:01:11.594 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://47.98.120.110:12123/eureka/}
+
+javax.ws.rs.WebApplicationException: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:110) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:200) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:805) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:791) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2218) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2076) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1453) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at org.springframework.cloud.netflix.eureka.server.CloudJacksonJson.decode(CloudJacksonJson.java:84) ~[spring-cloud-netflix-eureka-server-3.0.0-SNAPSHOT.jar!/:3.0.0-SNAPSHOT]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	... 26 more
+
+12:01:11.594  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+12:01:11.594 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.DiscoveryClient:1018]: DiscoveryClient_EUREKA/DESKTOP-O164E7I:eureka:12123 - was unable to refresh its cache! status = Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:01:14.302  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:01:17.303  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:01:20.318  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 15ms
+12:01:23.322  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:01:26.327  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:01:29.344  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 16ms
+12:01:32.349  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:01:35.354  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:01:38.367  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 12ms
+12:01:41.377  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 10ms
+12:01:44.378  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:01:47.387  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 8ms
+12:01:50.396  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 8ms
+12:01:53.411  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 15ms
+12:01:56.420  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 8ms
+12:01:59.420  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:02:02.421  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:02:05.430  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 9ms
+12:02:06.562  WARN [pocket,,] [27436] [DiscoveryClient-1][com.netflix.discovery.TimedSupervisorTask:73]: task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[?:?]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:02:06.562 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://10.0.1.10:12123/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:196) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	... 30 more
+
+12:02:06.562  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+12:02:06.615 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://47.98.120.110:12123/eureka/}
+
+javax.ws.rs.WebApplicationException: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:110) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:200) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:805) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:791) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2218) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2076) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1453) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at org.springframework.cloud.netflix.eureka.server.CloudJacksonJson.decode(CloudJacksonJson.java:84) ~[spring-cloud-netflix-eureka-server-3.0.0-SNAPSHOT.jar!/:3.0.0-SNAPSHOT]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	... 26 more
+
+12:02:06.615  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+12:02:06.615 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.DiscoveryClient:1018]: DiscoveryClient_EUREKA/DESKTOP-O164E7I:eureka:12123 - was unable to refresh its cache! status = Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:02:08.434  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:02:11.437  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:02:14.438  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:02:17.439  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:02:20.455  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 16ms
+12:02:23.465  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 10ms
+12:02:26.466  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:02:29.482  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 16ms
+12:02:32.496  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 13ms
+12:02:35.496  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:02:38.509  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 12ms
+12:02:41.509  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:02:44.512  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:02:47.512  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:02:50.515  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:02:53.529  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 14ms
+12:02:56.532  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:02:59.533  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:03:01.566  WARN [pocket,,] [27436] [DiscoveryClient-1][com.netflix.discovery.TimedSupervisorTask:73]: task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[?:?]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:03:01.588 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://10.0.1.10:12123/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:196) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	... 30 more
+
+12:03:01.588  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+12:03:01.639 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://47.98.120.110:12123/eureka/}
+
+javax.ws.rs.WebApplicationException: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:110) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:200) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:805) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:791) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2218) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2076) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1453) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at org.springframework.cloud.netflix.eureka.server.CloudJacksonJson.decode(CloudJacksonJson.java:84) ~[spring-cloud-netflix-eureka-server-3.0.0-SNAPSHOT.jar!/:3.0.0-SNAPSHOT]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	... 26 more
+
+12:03:01.639  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+12:03:01.639 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.DiscoveryClient:1018]: DiscoveryClient_EUREKA/DESKTOP-O164E7I:eureka:12123 - was unable to refresh its cache! status = Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:03:02.535  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:03:05.536  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:03:08.538  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:03:11.540  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:03:14.545  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:03:17.548  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:03:20.550  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:03:23.550  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:03:26.563  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 14ms
+12:03:29.577  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 12ms
+12:03:32.579  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:03:35.584  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:03:38.588  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:03:41.590  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:03:44.605  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 14ms
+12:03:47.625  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 19ms
+12:03:50.631  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 5ms
+12:03:53.635  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:03:56.585  WARN [pocket,,] [27436] [DiscoveryClient-1][com.netflix.discovery.TimedSupervisorTask:73]: task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[?:?]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:03:56.585 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://10.0.1.10:12123/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:196) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	... 30 more
+
+12:03:56.585  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+12:03:56.635  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:03:56.635 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://47.98.120.110:12123/eureka/}
+
+javax.ws.rs.WebApplicationException: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:110) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:634) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.ClientResponse.getEntity(ClientResponse.java:586) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:200) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:805) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.converters.EurekaJacksonCodec$ApplicationsDeserializer.deserialize(EurekaJacksonCodec.java:791) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.fasterxml.jackson.databind.ObjectReader._unwrapAndDeserialize(ObjectReader.java:2218) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2076) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1453) ~[jackson-databind-2.11.2.jar!/:2.11.2]
+	at com.netflix.discovery.converters.EurekaJacksonCodec.readValue(EurekaJacksonCodec.java:213) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at org.springframework.cloud.netflix.eureka.server.CloudJacksonJson.decode(CloudJacksonJson.java:84) ~[spring-cloud-netflix-eureka-server-3.0.0-SNAPSHOT.jar!/:3.0.0-SNAPSHOT]
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.readFrom(DiscoveryJerseyProvider.java:103) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	... 26 more
+
+12:03:56.635  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: com.fasterxml.jackson.core.JsonParseException: processing aborted
+ at [Source: (GZIPInputStream); line: 1, column: 18]
+12:03:56.635 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.DiscoveryClient:1018]: DiscoveryClient_EUREKA/DESKTOP-O164E7I:eureka:12123 - was unable to refresh its cache! status = Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:03:59.650  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 15ms
+12:04:02.651  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:04:05.671  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 19ms
+12:04:08.691  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 19ms
+12:04:11.711  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 20ms
+12:04:14.713  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:56:51.721  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3154025ms
+12:56:52.587  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][org.apache.http.impl.client.DefaultRequestDirector:618]: I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://10.0.1.10:12123: No route to host: connect
+12:56:52.588  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][org.apache.http.impl.client.DefaultRequestDirector:626]: Retrying connect to {}->http://10.0.1.10:12123
+12:56:52.589  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][org.apache.http.impl.client.DefaultRequestDirector:618]: I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://10.0.1.10:12123: No route to host: connect
+12:56:52.589  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][org.apache.http.impl.client.DefaultRequestDirector:626]: Retrying connect to {}->http://10.0.1.10:12123
+12:56:52.590  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][org.apache.http.impl.client.DefaultRequestDirector:618]: I/O exception (java.net.NoRouteToHostException) caught when connecting to {}->http://10.0.1.10:12123: No route to host: connect
+12:56:52.590  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][org.apache.http.impl.client.DefaultRequestDirector:626]: Retrying connect to {}->http://10.0.1.10:12123
+12:56:52.592 ERROR [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://10.0.1.10:12123/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: java.net.NoRouteToHostException: No route to host: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:196) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getDelta(AbstractJerseyEurekaHttpClient.java:172) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1131) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1013) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1533) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1500) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.net.NoRouteToHostException: No route to host: connect
+	at java.net.PlainSocketImpl.waitForConnect(Native Method) ~[?:?]
+	at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[?:?]
+	at java.net.Socket.connect(Socket.java:591) ~[?:?]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	... 30 more
+
+12:56:52.592  WARN [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: java.net.NoRouteToHostException: No route to host: connect
+12:56:52.878  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][org.apache.http.impl.client.DefaultRequestDirector:690]: I/O exception (java.net.SocketException) caught when processing request to {}->http://47.98.120.110:12123: Connection reset
+12:56:52.880  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][org.apache.http.impl.client.DefaultRequestDirector:700]: Retrying request to {}->http://47.98.120.110:12123
+12:56:52.961  INFO [pocket,,] [27436] [DiscoveryClient-CacheRefreshExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:124]: Request execution succeeded on retry #1
+12:56:54.869  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 147ms
+12:56:57.581  WARN [pocket,,] [27436] [DiscoveryClient-0][com.netflix.discovery.TimedSupervisorTask:73]: task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:204) ~[?:?]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+
+12:56:57.781 ERROR [pocket,,] [27436] [DiscoveryClient-HeartbeatExecutor-0][com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient:83]: Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://10.0.1.10:12123/eureka/}
+
+com.sun.jersey.api.client.ClientHandlerException: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.put(WebResource.java:529) ~[jersey-client-1.19.1.jar!/:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.sendHeartBeat(AbstractJerseyEurekaHttpClient.java:103) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:890) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1459) ~[eureka-client-1.9.25.jar!/:1.9.25]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:123) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.12.jar!/:4.5.12]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar!/:1.19.1]
+	... 27 more
+
+12:56:57.781  WARN [pocket,,] [27436] [DiscoveryClient-HeartbeatExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:130]: Request execution failed with message: org.apache.http.conn.ConnectTimeoutException: Connect to 10.0.1.10:12123 timed out
+12:56:57.819  INFO [pocket,,] [27436] [DiscoveryClient-HeartbeatExecutor-0][com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient:124]: Request execution succeeded on retry #1
+12:56:57.819  INFO [pocket,,] [27436] [DiscoveryClient-HeartbeatExecutor-0][com.netflix.discovery.DiscoveryClient:894]: DiscoveryClient_EUREKA/DESKTOP-O164E7I:eureka:12123 - Re-registering apps/EUREKA
+12:56:57.820  INFO [pocket,,] [27436] [DiscoveryClient-HeartbeatExecutor-0][com.netflix.discovery.DiscoveryClient:870]: DiscoveryClient_EUREKA/DESKTOP-O164E7I:eureka:12123: registering service...
+12:56:57.869  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:56:57.885  INFO [pocket,,] [27436] [DiscoveryClient-HeartbeatExecutor-0][com.netflix.discovery.DiscoveryClient:879]: DiscoveryClient_EUREKA/DESKTOP-O164E7I:eureka:12123 - registration status: 204
+12:57:00.870  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:03.870  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:06.871  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:09.871  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:12.872  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:15.872  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:57:18.873  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:21.873  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:24.874  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:27.875  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:30.875  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:33.875  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:36.876  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:39.876  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:42.877  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:45.878  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:48.878  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:51.878  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:54.879  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:57:57.880  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:58:00.881  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:03.881  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:06.881  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:09.881  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:12.882  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:15.888  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:18.883  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:21.884  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:24.884  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:26.300  INFO [pocket,,] [27436] [AsyncResolver-bootstrap-executor-0][com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver:43]: Resolving eureka endpoints via configuration
+12:58:27.885  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:30.886  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:33.887  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:36.887  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:39.888  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:42.889  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:45.889  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:48.889  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:51.890  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:54.890  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:58:57.890  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:59:00.890  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:59:03.891  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:59:06.891  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:59:09.909  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 17ms
+12:59:12.912  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:59:15.914  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:59:18.914  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 0ms
+12:59:21.915  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:59:24.917  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:59:27.918  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:59:30.921  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:59:33.927  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 6ms
+12:59:36.929  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 1ms
+12:59:39.940  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 10ms
+12:59:42.943  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:59:45.946  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms
+12:59:48.948  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:59:51.951  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 2ms
+12:59:54.955  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 4ms
+12:59:57.959  INFO [pocket,,] [27436] [Eureka-EvictionTimer][com.netflix.eureka.registry.AbstractInstanceRegistry$EvictionTask:1247]: Running the evict task with compensationTime 3ms

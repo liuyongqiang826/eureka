@@ -1,0 +1,41 @@
+#app name setting
+spring:
+  application:
+    name: eureka
+
+#eureka setting
+eureka:
+  #client-side
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://47.98.120.110:12123/eureka/
+  #instance-side
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    #using ip rather than hostname    
+    prefer-ip-address: true
+  #server-side
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 3000
+    response-cache-auto-expiration-in-seconds: 180
+    response-cache-update-interval-ms: 3000
+
+
+#port setting
+server:
+  port: 12123
+  undertow:
+    accesslog:
+      dir: ./log
+      enabled: true
+      pattern: '[%{time,yyyy-MM-dd HH:mm:ss.S z}] %m %U "%q" %s %D %b %{i,X-B3-TraceId},%{i,X-B3-SpanId}
+        %{i,X-Real-IP} %{i,Referer} "%{i,User-Agent}" %{i,Platform} %l %u %I %v %a'
+      prefix: access.
+    buffer-size: 128
+    directBuffers: true
+    io-threads: 32
+    worker-threads: 512
+    
